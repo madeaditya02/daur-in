@@ -284,11 +284,11 @@ function filterBarang(barang) {
           </h2>
           <!-- <div class="w-9/12 mx-auto mt-6"></div> -->
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-4 mt-6">
-            <div v-for="agen in dataAgen.filter(a => a.items.length > 0)" :key="agen.id"
+            <div v-for="(agen, i) in dataAgen.filter(a => a.items.length > 0)" :key="agen.id"
               class="p-3 bg-white rounded-md cursor-pointer hover:shadow-lg transition"
               :class="agen.id == data.step2.agen?.id ? 'border border-primary' : ''" @click="selectAgen(agen)">
               <div class="flex gap-3">
-                <img src="https://source.unsplash.com/64x64" alt="" class="w-16 h-16 rounded-md">
+                <img :src="agen.image ?? `https://source.unsplash.com/6${i}x6${i}`" alt="" class="w-16 h-16 rounded-md">
                 <div class="overflow-hidden">
                   <h3 class="font-semibold text-lg truncate text-ellipsis">{{ agen.name }}</h3>
                   <p class="mt-2">{{ agen.location }}</p>

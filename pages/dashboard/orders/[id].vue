@@ -4,7 +4,8 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faCartShopping, faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
 definePageMeta({
-  layout: 'dashboard'
+  layout: 'dashboard',
+  middleware: ['auth', 'admin']
 })
 
 const order = ref({

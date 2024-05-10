@@ -2,13 +2,14 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faTrashCanArrowUp, faClockRotateLeft } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
+const loggedUser = useState('loggedUser')
 </script>
 <template>
   <div
     class="px-6 sm:px-8 lg:px-24 mx-4 mt-8 bg-primary rounded-2xl text-white py-5 lg:py-12 flex flex-col lg:flex-row justify-between items-center gap-y-5">
     <div class="lg:w-1/2">
-      <h1 class="text-3xl lg:text-5xl font-semibold leading-normal">
-        Selamat datang di DaurIn! John Doe
+      <h1 class="text-3xl lg:text-5xl font-semibold leading-loose">
+        Selamat datang di DaurIn! {{ loggedUser.name }}
       </h1>
       <NuxtLink to="/order" class="mt-5 inline-block bg-white text-primary px-4 py-2 rounded-lg">Setor Sampah</NuxtLink>
     </div>

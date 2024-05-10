@@ -31,7 +31,12 @@ async function onSubmit(event) {
         token: res.refreshToken
       }
     })
-    navigateTo('/')
+    const user = await $fetch('https://daurin-api-production.up.railway.app/user', {
+      headers: {
+        "Authorization": "Bearer " + res.refreshToken
+      }
+    });
+    navigateTo(user.role == 'Agent' ? '/dashboard' : '/')
   } catch (error) {
     if (error.data.message == "The credentials you provided doesn't match our records. Please try again") {
       form.value.setErrors([{

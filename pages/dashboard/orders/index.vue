@@ -1,7 +1,9 @@
 <script setup>
 definePageMeta({
-  layout: 'dashboard'
+  layout: 'dashboard',
+  middleware: ['auth', 'admin']
 })
+const loggedUser = useState('loggedUser')
 const data = ref([
   {
     "id": "1",

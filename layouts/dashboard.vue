@@ -6,6 +6,7 @@ useHead({
     class: 'bg-gray-100'
   }
 })
+const { clear } = useUserSession()
 const items = [
   [{
     label: 'ben@example.com',
@@ -21,7 +22,11 @@ const items = [
       icon: 'i-heroicons-user'
     },], [{
       label: 'Keluar',
-      icon: 'i-heroicons-arrow-left-on-rectangle'
+      icon: 'i-heroicons-arrow-left-on-rectangle',
+      click() {
+        clear()
+        navigateTo('/auth')
+      }
     }]
 ]
 const openSidebar = ref(false);

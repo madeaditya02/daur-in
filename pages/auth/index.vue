@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { object, string } from 'yup'
 definePageMeta({
-  layout: false
+  layout: 'auth'
 })
 const form = ref()
 const schema = object({
@@ -83,7 +83,7 @@ async function onSubmit(event) {
         <p>Belum Punya Akun? <NuxtLink to="/auth/register" class="text-blue-500">Daftar</NuxtLink>
         </p>
       </div>
-      <div class="flex items-center justify-center gap-4 my-6">
+      <!-- <div class="flex items-center justify-center gap-4 my-6">
         <div class="flex-grow border-t border-black"></div>
         <span>atau</span>
         <div class="flex-grow border-t border-black"></div>
@@ -91,7 +91,7 @@ async function onSubmit(event) {
       <button class="block w-full py-2 px-4 sm:py-3 rounded-lg border border-black transition duration-200 text-center">
         <FontAwesomeIcon :icon="faGoogle" class=" mr-1" />
         Lanjutkan dengan Google
-      </button>
+      </button> -->
     </div>
   </div>
 </template>

@@ -17,6 +17,9 @@ export default defineNuxtConfig({
       api_domain: process.env.API_DOMAIN,
     }
   },
+  colorMode: {
+    preference: 'light'
+  },
 
   modules: ["@nuxt/ui", "nuxt-auth-utils"]
 })

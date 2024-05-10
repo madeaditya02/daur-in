@@ -4,7 +4,7 @@ import { faUsers, faShop, faCircleInfo } from "@fortawesome/free-solid-svg-icons
 import { object, string } from 'yup'
 import Swal from "sweetalert2";
 definePageMeta({
-  layout: false
+  layout: 'auth'
 })
 
 const step = ref(1);

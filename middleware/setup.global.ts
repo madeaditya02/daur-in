@@ -11,7 +11,9 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
   const session: any = await useFetch('/api/user');
   console.log(session.data.value);
   useState('loggedUser', () => null)
-  if (session.data.value.user) {
+  console.log(session.data.value);
+  
+  if (session.data.value?.user) {
     const user:any = await $fetch('https://daurin-api-production.up.railway.app/user', {
       headers: {
         "Authorization": "Bearer " + session.data.value.user.token
